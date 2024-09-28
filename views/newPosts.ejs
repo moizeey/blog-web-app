@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/new-post.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="h1">create new posts</h1>
+    <div class="form-container">
+      <form class="form" action="/newPosts" method="post">
+        <div class="container">
+          <label for="title">Title: </label>
+          <input type="text" name="title" class="title" required />
+        </div>
+        <div class="container">
+          <label for="content">Content: </label>
+          <textarea
+            name="content"
+            class="content"
+            rows="10"
+            cols="50"
+            required
+          ></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="icon">My Blogs</div>
+
+        <div class="nav-items">
+          <ul>
+            <li>
+              <a class="create-new" href="/newPost">Create a new blog post</a>
+            </li>
+            <!-- <li><a href="" class="about">About us</a></li> -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <% if(posts.length === 0){ %>
+    <h1 class="no-post" style="color: white">no posts</h1>
+    <% } else{ %>
+    <div class="blog-list">
+      <div class="blog">
+        <ul>
+          <% posts.forEach((post,index) => { %>
+          <li>
+            <h2 class="title"><%= post.title %></h2>
+            <p class="content"><%= post.content %></p>
+            <a class="edit-btn" href="/edit-post/<%= index %>">Edit</a>
+
+            <form action="/delete-post/<%= index %>" method="post">
+              <button class="del-btn" type="submit">Delete blog</button>
+            </form>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+
+    <% } %>
+    <!-- HTML !-->
+    <!-- <button class="button-33" role="button">Button 33</button> -->
+  </body>
+</html>
